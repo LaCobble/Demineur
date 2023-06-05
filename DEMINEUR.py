@@ -9,7 +9,7 @@ import time
 import datetime
 
 print("Bienvenue sur le jeu du Démineur !")
-print("Réalisé par P-Y MCT")
+print("Réalisé par La_Cobble")
 
 def generateur(size, T, bomb):
 #Tableau
