@@ -1,6 +1,10 @@
 ## Minesweeper
 This project was carried out in Python as part of the first semester of our Computer Science DUT. Minesweeper is a game with no graphical interface.
 
+<p align="center">
+<img src="https://github.com/LaCobble/Demineur/assets/71151090/478428b2-f660-412c-8ee1-930c12f98151" width=40% height=40%>
+</p>
+
 ## Presentation
 Minesweeper is a classic game in which the player must find all the empty squares on the grid without exploding any mines. The grid is represented by a matrix, and each square contains either a mine or a number indicating the number of adjacent mines.
 
@@ -25,4 +29,4 @@ Once you've chosen the difficulty and grid size, you can start playing. The game
 If you uncover a square containing a mine, the game ends and you lose. The number of moves you have made and the time taken will be displayed. Otherwise, continue to uncover the empty squares until you have uncovered all the squares without a mine to win the game.
 
 ## Author
-This game was created by P-Y MCT.
+This game was created by La_Cobble.
