@@ -8,7 +8,7 @@
 A console Minesweeper written in plain Python, with recursive flood fill, flags, a timer and a session scoreboard.
 
 <p align="center">
-  <img src="https://github.com/LaCobble/Demineur/assets/71151090/478428b2-f660-412c-8ee1-930c12f98151" width="40%" alt="Minesweeper grid in the terminal">
+  <img src="docs/images/2-flood-fill.webp" width="70%" alt="Minesweeper grid in the terminal after the first move">
 </p>
 
 ## What it does
@@ -23,6 +23,29 @@ Minesweeper is the classic puzzle: uncover every safe square of the grid without
 - Scoreboard of the games played during the session, sorted by time.
 
 The in-game text is in French.
+
+## Screenshots
+
+Real terminal sessions of `DEMINEUR.py` (difficulty 1, 30 × 30 grid), rendered as images. Hidden squares are `x`, flags `!`.
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/images/1-new-game.webp" alt="New game: difficulty, grid size and the hidden grid"></td>
+    <td width="50%"><img src="docs/images/2-flood-fill.webp" alt="First move uncovering a large empty area"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>New game: choose the difficulty and the grid size</sub></td>
+    <td align="center"><sub>First move: the recursive flood fill opens the empty area</sub></td>
+  </tr>
+  <tr>
+    <td><img src="docs/images/3-flag.webp" alt="A flag placed on a suspected mine"></td>
+    <td><img src="docs/images/4-win.webp" alt="Grid cleared, moves, time and scoreboard"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>Typing <code>!</code> places a flag on a suspected mine</sub></td>
+    <td align="center"><sub>Grid cleared: moves, time and the session scoreboard</sub></td>
+  </tr>
+</table>
 
 ## Getting started
 
