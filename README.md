@@ -1,32 +1,98 @@
-## Minesweeper
-This project was carried out in Python as part of the first semester of our Computer Science DUT. Minesweeper is a game with no graphical interface.
+# Minesweeper (Démineur)
+
+[![CI](https://github.com/LaCobble/Demineur/actions/workflows/ci.yml/badge.svg)](https://github.com/LaCobble/Demineur/actions/workflows/ci.yml)
+![Python](https://img.shields.io/badge/python-3.8%2B-3776AB?logo=python&logoColor=white)
+![Dependencies](https://img.shields.io/badge/dependencies-none-brightgreen)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+A console Minesweeper written in plain Python, with recursive flood fill, flags, a timer and a session scoreboard.
 
 <p align="center">
-<img src="https://github.com/LaCobble/Demineur/assets/71151090/478428b2-f660-412c-8ee1-930c12f98151" width=40% height=40%>
+  <img src="docs/images/2-flood-fill.webp" width="70%" alt="Minesweeper grid in the terminal after the first move">
 </p>
 
-## Presentation
-Minesweeper is a classic game in which the player must find all the empty squares on the grid without exploding any mines. The grid is represented by a matrix, and each square contains either a mine or a number indicating the number of adjacent mines.
+## What it does
 
-## Features
-The Minesweeper game offers the following features:
+Minesweeper is the classic puzzle: uncover every safe square of the grid without stepping on a mine. Each uncovered square shows how many mines touch it. This version runs entirely in the terminal and uses only the Python standard library.
 
-Random generation of the grid with mines.
-Display the grid with numbers and hidden mines.
-Find empty squares using recursion.
-Place flags to mark suspected mines.
-Count down the time spent during the game.
-Display the number of moves made.
+- Random grid generation with the chosen number of mines.
+- Grid display with row and column coordinates.
+- Recursive uncovering of empty areas (flood fill).
+- Flags to mark suspected mines.
+- Timer and move counter, shown at the end of the game.
+- Scoreboard of the games played during the session, sorted by time.
 
-## How to play the game
-When you launch the game, you will be asked to choose the difficulty and size of the grid. Here are the options available:
+The in-game text is in French.
 
-Difficulty 1: The number of bombs is equal to the size of the grid.
-Difficulty 2: The number of bombs is twice the size of the grid.
-Difficulty 3: The number of bombs is equal to three times the size of the grid.
-Once you've chosen the difficulty and grid size, you can start playing. The game will ask you if you want to uncover a square or place a flag. Use the "Enter" key to uncover a square and the "!" key to place a flag. Then enter the coordinates of the square you want to uncover or mark.
+## Screenshots
 
-If you uncover a square containing a mine, the game ends and you lose. The number of moves you have made and the time taken will be displayed. Otherwise, continue to uncover the empty squares until you have uncovered all the squares without a mine to win the game.
+Real terminal sessions of `DEMINEUR.py` (difficulty 1, 30 × 30 grid), rendered as images. Hidden squares are `x`, flags `!`.
 
-## Author
-This game was created by La_Cobble.
+<table>
+  <tr>
+    <td width="50%"><img src="docs/images/1-new-game.webp" alt="New game: difficulty, grid size and the hidden grid"></td>
+    <td width="50%"><img src="docs/images/2-flood-fill.webp" alt="First move uncovering a large empty area"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>New game: choose the difficulty and the grid size</sub></td>
+    <td align="center"><sub>First move: the recursive flood fill opens the empty area</sub></td>
+  </tr>
+  <tr>
+    <td><img src="docs/images/3-flag.webp" alt="A flag placed on a suspected mine"></td>
+    <td><img src="docs/images/4-win.webp" alt="Grid cleared, moves, time and scoreboard"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>Typing <code>!</code> places a flag on a suspected mine</sub></td>
+    <td align="center"><sub>Grid cleared: moves, time and the session scoreboard</sub></td>
+  </tr>
+</table>
+
+## Getting started
+
+### Prerequisites
+
+- Python 3.8 or newer. No third-party package is needed.
+
+### Run
+
+```bash
+git clone https://github.com/LaCobble/Demineur.git
+cd Demineur
+python DEMINEUR.py
+```
+
+### How to play
+
+1. Choose the difficulty and the grid size (30 or 40):
+   - difficulty 1: as many mines as the grid size,
+   - difficulty 2: twice as many,
+   - difficulty 3: three times as many.
+2. On each turn, press **Enter** to uncover a square or type **!** to place a flag, then give the horizontal and vertical coordinates.
+3. Uncovering a mine ends the game; uncovering every safe square wins it. Your number of moves and time are displayed, then you can view the scoreboard and play again.
+
+## Project structure
+
+```text
+.
+├── DEMINEUR.py   # the whole game: grid generation, display, flood fill, game loop, scoreboard
+└── README.md
+```
+
+## What this project demonstrates
+
+- Modelling a game board as a 2D matrix, and computing neighbour counts on its edges and corners.
+- Recursion: uncovering connected empty squares.
+- A simple game loop with input validation, timing (`time`) and dates (`datetime`).
+- A hand-written selection sort to keep the scoreboard ordered.
+
+## Context
+
+Built in Python during the first semester of a two-year Computer Science degree (DUT Informatique), in the 2021–2022 school year. It is kept as it was written, as a portfolio piece; only the repository around it (documentation, CI) has been tidied up.
+
+## Contributing
+
+Issues and small pull requests are welcome: see [CONTRIBUTING.md](CONTRIBUTING.md) and the [Code of Conduct](CODE_OF_CONDUCT.md).
+
+## License
+
+[MIT](LICENSE) © LaCobble
